@@ -1,0 +1,92 @@
+# _PRINTF(3) Manual Page
+
+## NAME
+
+_printf - Custom implementation of the printf function
+
+## SYNOPSIS
+
+```c
+#include "main.h"
+
+int _printf(const char *format, ...);
+
+DESCRIPTION
+
+The _printf function is a custom implementation of the printf function in C. 
+It allows formatted output to be printed to the standard output stream (stdout). 
+The function supports various format specifiers for printing different data types.
+
+RETURN VALUE
+
+Upon successful execution, _printf returns the total number of characters printed 
+(excluding the null byte used to end output to strings). If an error occurs, the function returns -1.
+
+FORMAT SPECIFIERS
+
+The _printf function supports the following format specifiers:
+
+%c: Prints a single character.
+%s: Prints a string of characters.
+%%: Prints a percent symbol (%).
+%d, %i: Prints a signed integer.
+%u: Prints an unsigned integer.
+%b: Prints an integer in binary format.
+%o: Prints an integer in octal format.
+%x: Prints an integer in lowercase hexadecimal format (0-9, a-f).
+%X: Prints an integer in uppercase hexadecimal format (0-9, A-F).
+%r: Prints a string in reverse.
+%R: Prints a string in ROT13 encryption.
+ARGUMENTS
+
+format: A character string containing the format specifiers and regular text to be printed. 
+This is the first argument passed to the function.
+...: Optional arguments that depend on the format specifiers used in the format string. 
+These are the additional arguments to be printed, corresponding to the format specifiers.
+EXAMPLES
+
+- Printing a string:
+
+_printf("Hello, World!\n");
+
+- printing an integer
+
+int num = 42;
+_printf("The answer is %d\n", num);
+
+
+- printing a character
+
+char ch = 'A';
+_printf("The first letter of the alphabet is %c\n", ch);
+
+
+- printfing a string in reverse
+
+_printf("Reverse of 'hello': %r\n", "hello");
+
+
+- printing an integer in binary format
+
+int binary_num = 10;
+_printf("Binary representation of 10: %b\n", binary_num);
+
+
+SEE ALSO
+
+printf(3), puts(3), write(2)
+
+AUTHORS
+
+This custom _printf function was developed by Martin Omondi and Justus Gugwa.
+
+REPORTING BUGS
+
+Report any bugs or issues to info.martinomondi@gmail.com.
+
+COPYRIGHT
+
+This is free software; you are free to redistribute it under the terms of the MIT License. 
+There is NO WARRANTY, to the extent permitted by law. See the LICENSE file for details.
+
+
